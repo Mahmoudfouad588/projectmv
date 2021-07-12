@@ -11,12 +11,23 @@ function homePage() {
   page.style.cssText = "display: flex; opacity: 0;";
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  window.setTimeout(function () {
+  setTimeout(function () {
+    homePage();
+  }, 100);
+  loading();
+}, 2800);
+}, false);
+                          
+/*
 window.setTimeout(function () {
   setTimeout(function () {
     homePage();
   }, 100);
   loading();
 }, 2800);
+*/
 
 let newCairo = document.querySelector(".new-cairo"),
   october = document.querySelector(".october"),
