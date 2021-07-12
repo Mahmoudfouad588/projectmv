@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./images/question.png"/>
+    <title>Assistant</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="loading-page">
+        <img src="./images/logo.svg" alt="logo"/>
+      </div>
+
+      <div class="nav-bar">
+        <ul class="first-list">
+          <a href="https://mountainviewegypt.com/" target="_blank" class="web"
+            ><li>Website</li></a
+          >
+          <li onclick="project()" class="projects">
+            <a href="#">Projects</a>
+            <button class="new-cairo" onclick="projectsList() , creatAbout()">
+              New Cairo
+            </button>
+            <button class="october" onclick="octoberProj() , creatAbout()">
+              October
+            </button>
+            <button class="coastal" onclick="coastalProj() , creatAbout()">
+              Coastal
+            </button>
+          </li>
+          <li onclick="quickActions()" class="quick-actions">
+            <a href="#">Quick Actions</a>
+            <button class="intro" onclick="introScriptOpen()">MV Intro</button>
+            <button class="faq" onclick="faqScriptOpen()">FAQ</button>
+            <button class="locations" onclick="locationScriptOpen()">
+              Projects Locations
+            </button>
+            <button class="ids" onclick="idsScriptOpen()">Agents IDs</button>
+          </li>
+          <li><a href="#">Memories</a></li>
+        </ul>
+      </div>
+      <div class="page">
+        <div class="about">
+          <img src="./images/logo.svg" loading="lazy"" alt="logo" />
+          <h1 class="title">About Us</h1>
+          <p class="about-us">
+            Mountain View Call Center has been established in 2007 with a small
+            group of employees, Covering all operational requests as well as
+            supporting other departments through out the whole day by spilitting
+            our team into two different shifts (Morning Shifts & Night Shifts)
+            We started develop our team members to be more sales oriented and to
+            grow bigger, Focusing on the clients needs and trying our absolute
+            best to match the clients with their needs, Till we proudly reached
+            a point were we are categorized as number one real estatte call
+            center all over Egypt. "Those who cannot change their minds cannot
+            change anything", We belive in Flexability, Commitment and self
+            development, Because that is how we are going to continue succeding.
+          </p>
+        </div>
+        <div class="projects-list">
+          <ul>
+            <li onclick="mvIActive()" class="mviNC">MV I</li>
+            <li class="mviiNc" onclick="mvIIActive()">MV II</li>
+            <li class="mvErkNc" onclick="mvErkNcActive()">MV ERK</li>
+            <li class="mvHpNc" onclick="mvHpNcActive()">MV HP</li>
+            <li class="iCityNc" onclick="iCityNcActive()">MV I-City</li>
+          </ul>
+        </div>
+        <div class="october-list">
+          <ul>
+            <li class="mvGpl" onclick="mvGpActive()">MV GP</li>
+            <li class="mvop" onclick="mvOpActive()">MV OP</li>
+            <li class="mvchop" onclick="mvChopActive()">MV CHOP</li>
+            <li class="icityoct" onclick="icityOActive()">MV I-City</li>
+          </ul>
+        </div>
+        <div class="coastal-list">
+          <ul>
+            <li class="mvasi" onclick="mvAsiActive()">MV ASI</li>
+            <li class="mvasii" onclick="mvAsiiActive()">MV ASII</li>
+            <li class="mvnc" onclick="mvNcActive()">MV NC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="intro-opj">
+        <div class="mv-intro">
+          <object data="./pdf/intro.pdf" type="application/pdf"></object>
+        </div>
+      </div>
+
+      <div class="faq-opj">
+        <div class="mv-faq">
+          <object data="./pdf/faq.pdf" type="application/pdf"></object>
+        </div>
+      </div>
+
+      <div class="location-opj">
+        <div class="mv-location">
+          <object data="./pdf/locations.pdf" type="application/pdf"></object>
+        </div>
+      </div>
+
+      <div class="agents-opj">
+        <div class="mv-agents">
+          <object data="./pdf/ids.pdf" type="application/pdf"></object>
+        </div>
+      </div>
+      <div class="mvi-cards">
+        <div class="mvi-location" onclick="openingLoction()">
+          <img src="./images/MVI-Location.png" loading="lazy" loading="lazy" alt="Location" />
+          <h1>MV I Location</h1>
+          <p>15 Minutes from AUC</p>
+        </div>
+        <div class="mvi-types" onclick="openingTypes()">
+          <img src="./images/StandAlone.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>Stand Alone VIlla</p>
+            <p>Twin Houses</p>
+          </div>
+        </div>
+        <div class="mvi-script" onclick="openingScript()">
+          <img src="./images/MVI.jpg" loading="lazy" alt="Scriot" />
+          <h1>MV I Script</h1>
+          <p>Mountain View's Beginnings</p>
+        </div>
+        <div class="mvi-master" onclick="openingMaster()">
+          <img src="./images/MVIMaster.png" loading="lazy" loading="lazy" alt="Master Plan" />
+          <h1>MV I Master Plan</h1>
+          <p>A Life to look up to</p>
+        </div>
+      </div>
+      <div class="mvii-cards">
+        <div class="mvii-location" onclick="openingMviiLoction()">
+          <img src="./images/MVIILocation.png" loading="lazy" alt="Location" />
+          <h1>MV II Location</h1>
+          <p>15 Minutes from AUC</p>
+        </div>
+        <div class="mvii-types" onclick="openingMviiTypes()">
+          <img src="./images/StandAlone.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>Stand Alone VIlla</p>
+            <p>Town Houses</p>
+          </div>
+        </div>
+        <div class="mvii-script" onclick="openingMviiScript()">
+          <img src="./images/MVII.jpg" loading="lazy" alt="Script" />
+          <h1>MV II Script</h1>
+          <p>Mountain View's 2nd Project</p>
+        </div>
+        <div class="mvii-master" onclick="openingMviiMaster()">
+          <img src="./images/MVII-Master.png" loading="lazy" alt="Master Plan" />
+          <h1>MV II Master Plan</h1>
+          <p>A Better lifestyle for the Family</p>
+        </div>
+      </div>
+      <div class="mverk-cards">
+        <div class="mverk-location" onclick="openingMverkLoction()">
+          <img src="./images/MVERK-Location.png" loading="lazy" alt="Location" />
+          <h1>MV ERK Location</h1>
+          <p>Located Off Of Street 90</p>
+        </div>
+        <div class="mverk-types" onclick="openingMverkTypes()">
+          <img src="./images/IVILLA-1.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>I-Villa</p>
+            <p>Penthouse</p>
+            <p>Apartments</p>
+          </div>
+        </div>
+        <div class="mverk-script" onclick="openingMverkScript()">
+          <img src="./images/MVERK.png" loading="lazy" alt="Script" />
+          <h1>MV ERK Script</h1>
+          <p>A Haven for Aspiring Executives</p>
+        </div>
+        <div class="mverk-master" onclick="openingMverkMaster()">
+          <img src="./images/MVERK-Master.png" loading="lazy" alt="Master Plan" />
+          <h1>MV ERK Master Plan</h1>
+          <p>Conveniently located in New Cairo</p>
+        </div>
+      </div>
+      <div class="mvhp-cards">
+        <div class="mvhp-location" onclick="openingMvhpLoction()">
+          <img src="./images/MVHP-Location.png" loading="lazy" alt="Location" />
+          <h1>MV HP Location</h1>
+          <p>5 Minutes from AUC</p>
+        </div>
+        <div class="mvhp-types" onclick="openingMvhpTypes()">
+          <img src="./images/TownHouse.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>Twin & Town</p>
+            <p>I-Villa</p>
+            <p>Penthouse</p>
+            <p>Apartments</p>
+          </div>
+        </div>
+        <div class="mvhp-script" onclick="openingMvhpScript()">
+          <img src="./images/MVHP.png" loading="lazy" alt="Script" />
+          <h1>MV HP Script</h1>
+          <p>An ideal location in New Cairo</p>
+        </div>
+        <div class="mvhp-master" onclick="openingMvhpMaster()">
+          <img src="./images/HPMaster.jpg" loading="lazy" alt="Master Plan" />
+          <h1>MV HP Master Plan</h1>
+          <p>Life is better with a View</p>
+        </div>
+      </div>
+      <div class="mvicitync-cards">
+        <div class="mvicitync-location" onclick="openingicityncLoction()">
+          <img src="./images/ICity-NewCairo-Location.jpg" loading="lazy" alt="Location" />
+          <h1>I-City Location</h1>
+          <p>15 Minutes from AUC</p>
+        </div>
+        <div class="mvicitync-types" onclick="openingicityncTypes()">
+          <img src="./images/IApartment.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twin & Town</p>
+            <p>I-Villa</p>
+            <p>Park Villa</p>
+            <p>I-Apartments</p>
+          </div>
+        </div>
+        <div class="mvicitync-script" onclick="openingicityncScript()">
+          <img src="./images/I-City.jpg" loading="lazy" alt="Script" />
+          <h1>I-City Script</h1>
+          <p>A City Within A City</p>
+        </div>
+        <div class="mvicitync-master" onclick="openingicityncMaster()">
+          <img src="./images/ICityPlan.jpg" loading="lazy" alt="Master Plan" />
+          <h1>I-City Master Plan</h1>
+          <p>Innovative 4-Dimensional design</p>
+        </div>
+      </div>
+      <div class="mvgp-cards">
+        <div class="mvgp-location" onclick="openinggpLoction()">
+          <img src="./images/gplocation.png" loading="lazy" alt="Location" />
+          <h1>MV GP Location</h1>
+          <p>5 Minutes from Hazim Hassan</p>
+        </div>
+        <div class="mvgp-types" onclick="openinggpTypes()">
+          <img src="./images/IVILLA-1.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>I-Villa</p>
+          </div>
+        </div>
+        <div class="mvgp-script" onclick="openinggpScript()">
+          <img src="./images/MVGP.jpg" loading="lazy" alt="Script" />
+          <h1>MV GP Script</h1>
+          <p>A Picture-Perfect Abode</p>
+        </div>
+        <div class="mvgp-master" onclick="openinggpMaster()">
+          <img src="./images/GPLMaster.png" loading="lazy" alt="Master Plan" />
+          <h1>MV gp Master Plan</h1>
+          <p>Tranquil and Convenient Atop the Giza Plateau</p>
+        </div>
+      </div>
+      <div class="mvop-cards">
+        <div class="mvop-location" onclick="openingopLoction()">
+          <img src="./images/OctoberParkLocation.png" loading="lazy" alt="Location" />
+          <h1>MV OP Location</h1>
+          <p>5 Minutes from GPL</p>
+        </div>
+        <div class="mvop-types" onclick="openingopTypes()">
+          <img src="./images/IVILLA-1.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>I-Villa</p>
+          </div>
+        </div>
+        <div class="mvop-script" onclick="openingopScript()">
+          <img src="./images/MVOP.png" loading="lazy" alt="Script" />
+          <h1>MV OP Script</h1>
+          <p>Make the Most of Every Day</p>
+        </div>
+        <div class="mvop-master" onclick="openingopMaster()">
+          <img src="./images/OctoberParkMaster.png" loading="lazy" alt="Master Plan" />
+          <h1>MV OP Master Plan</h1>
+          <p>Exquisitely Overlooking the Great Pyramids of Giza</p>
+        </div>
+      </div>
+      <div class="mvchop-cards">
+        <div class="mvchop-location" onclick="openingchopLoction()">
+          <img src="./images/CHOPLocation.jpg" loading="lazy" alt="Location" />
+          <h1>MV CHOP Location</h1>
+          <p>5 Minutes from Juhyna Square</p>
+        </div>
+        <div class="mvchop-types" onclick="openingchopTypes()">
+          <img src="./images/StandAlone.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>C Villa</p>
+            <p>Town House</p>
+            <p>I-Villa</p>
+          </div>
+        </div>
+        <div class="mvchop-script" onclick="openingchopScript()">
+          <img src="./images/CHOPStand.jpg" loading="lazy" alt="Script" />
+          <h1>MV CHOP Script</h1>
+          <p>The Lakeside Villas</p>
+        </div>
+        <div class="mvchop-master" onclick="openingchopMaster()">
+          <img src="./images/CHOPMaster.png" loading="lazy" alt="Master Plan" />
+          <h1>MV CHOP Master Plan</h1>
+          <p>Strategically located in 6th October City</p>
+        </div>
+      </div>
+      <div class="icityo-cards">
+        <div class="icityo-location" onclick="openingicityoLoction()">
+          <img src="./images/I-CityOctoberLocation.png" loading="lazy" alt="Location" />
+          <h1>I-City October Location</h1>
+          <p>2 Minutes from Shooting Club</p>
+        </div>
+        <div class="icityo-types" onclick="openingicityoTypes()">
+          <img src="./images/IApartment.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twin & Town</p>
+            <p>I-Villa</p>
+            <p>Park Villa</p>
+            <p>I-Apartments</p>
+          </div>
+        </div>
+        <div class="icityo-script" onclick="openingicityoScript()">
+          <img src="./images/I-City.jpg" loading="lazy" alt="Script" />
+          <h1>I-City October Script</h1>
+          <p>Central and Convenient</p>
+        </div>
+        <div class="icityo-master" onclick="openingicityoMaster()">
+          <img src="./images/I-CityOctoberMaster.png" loading="lazy" alt="Master Plan" />
+          <h1>I-City October Master Plan</h1>
+          <p>An Ideal Environment with you at its Center</p>
+        </div>
+      </div>
+      <div class="mvasi-cards">
+        <div class="mvasi-location" onclick="openingasiLoction()">
+          <img src="./images/ASILocation.png" loading="lazy" alt="Location" />
+          <h1>MV AS I Location</h1>
+          <p>An Hour Away From Cairo</p>
+        </div>
+        <div class="mvasi-types" onclick="openingasiTypes()">
+          <img src="./images/ASChalets.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twin & Town</p>
+            <p>Chalets</p>
+          </div>
+        </div>
+        <div class="mvasi-script" onclick="openingasiScript()">
+          <img src="./images/MVASI.jpg" loading="lazy" alt="Script" />
+          <h1>MV AS I Script</h1>
+          <p>Red Sea Shores with a Tropical Twist</p>
+        </div>
+        <div class="mvasi-master" onclick="openingasiMaster()">
+          <img src="./images/ASIMaster.png" loading="lazy" alt="Master Plan" />
+          <h1>MV AS I Master Plan</h1>
+          <p>luxury is the norm</p>
+        </div>
+      </div>
+      <div class="mvasii-cards">
+        <div class="mvasii-location" onclick="openingasiiLoction()">
+          <img src="./images/ASIILocation.png" loading="lazy" alt="Location" />
+          <h1>MV AS II Location</h1>
+          <p>An Hour Away From Cairo</p>
+        </div>
+        <div class="mvasii-types" onclick=" openingasiiTypes()">
+          <img src="./images/ASTwin.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twin & Town</p>
+            <p>Chalets</p>
+          </div>
+        </div>
+        <div class="mvasii-script" onclick="openingasiiScript()">
+          <img src="./images/MVASII.png" loading="lazy" alt="Script" />
+          <h1>MV AS II Script</h1>
+          <p>Red Sea Delight, an hour away from Cairo</p>
+        </div>
+        <div class="mvasii-master" onclick="openingasiiMaster()">
+          <img src="./images/ASIIMaster.png" loading="lazy" alt="Master Plan" />
+          <h1>MV AS II Master Plan</h1>
+          <p>fun-filled weekends by the shore</p>
+        </div>
+      </div>
+      <div class="mvnc-cards">
+        <div class="mvnc-location" onclick="openingncLoction()">
+          <img src="./images/NCLocation.png" loading="lazy" alt="Location" />
+          <h1>MV NC Location</h1>
+          <p>Easly Reached from Dab'aa Road</p>
+        </div>
+        <div class="mvnc-types" onclick="openingncTypes()">
+          <img src="./images/NCChalets.jpg" loading="lazy" alt="Unit Types" />
+          <h1>Unit Types</h1>
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twin & Town</p>
+            <p>Chalets</p>
+          </div>
+        </div>
+        <div class="mvnc-script" onclick="openingncScript()">
+          <img src="./images/MVNC.jpg" loading="lazy" alt="Script" />
+          <h1>MV NC Script</h1>
+          <p>Seafront Beach-Houses</p>
+        </div>
+        <div class="mvnc-master" onclick="openingncMaster()">
+          <img src="./images/NCMaster.png" loading="lazy" alt="Master Plan" />
+          <h1>MV NC Master Plan</h1>
+          <p>The Summer Dreams Turned Reality</p>
+        </div>
+      </div>
+      <div class="location-open" id="mvi-location">
+        <div class="wrapper">
+          <img src="./images/MVI-Location.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>15 Minutes from AUC</p>
+            <p>Easly Accessible through the Ring Road</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvi-types">
+        <div class="wrapper">
+          <img src="./images/StandAlone.jpg" loading="lazy" alt="Stand Alone" />
+          <img src="./images/TownHouse.jpg" loading="lazy" alt="Twinhouse" />
+          <div class="list">
+            <p>American Design</p>
+            <p>Stand Alone Villa</p>
+            <p>Twinhouse</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvi-script">
+        <object data="./pdf/mvi.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvi-master">
+        <div class="wrapper">
+          <img src="./images/MVIMaster.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>A Life To Look Up To</p>
+            <p>Mountain View's Beginnings</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-open" id="mvii-location">
+        <div class="wrapper">
+          <img src="./images/MVII-Location.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>15 Minutes from AUC</p>
+            <p>Easly Accessible through the Ring Road</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvii-types">
+        <div class="wrapper">
+          <img src="./images/StandAlone.jpg" loading="lazy" alt="Stand Alone" />
+          <img src="./images/TownHouse.jpg" loading="lazy" alt="Twinhouse" />
+          <div class="list">
+            <p>American Design</p>
+            <p>Stand Alone Villa</p>
+            <p>Townhouse</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvii-script">
+        <object data="./pdf/mvii.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvii-master">
+        <div class="wrapper">
+          <img src="./images/MVII-Master.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>A Life To Look Up To</p>
+            <p>A Better Life For A Family</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-open" id="mverk-location">
+        <div class="wrapper">
+          <img src="./images/MVERK-Location.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>Few Minutes from AUC</p>
+            <p>Located Off Of Street 90</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mverk-types">
+        <div class="wrapper">
+          <img src="./images/IVILLA-1.jpg" loading="lazy" alt="I-Villa" />
+          <img src="./images/Penthouse.png" loading="lazy" alt="Penthouse" />
+          <div class="list">
+            <p>American Design</p>
+            <p>I-Villa</p>
+            <p>Penthouse & Apartments</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mverk-script">
+        <object data="./pdf/mverk.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mverk-master">
+        <div class="wrapper">
+          <img src="./images/ERKMaster.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>A Haven for Aspiring Executives</p>
+            <p>Conveniently located in New Cairo</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-open" id="mvhp-location">
+        <div class="wrapper">
+          <img src="./images/HPLocation.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>5 Minutes From AUC</p>
+            <p>Short Drive Away From Everyday Conveniences And Attractions</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvhp-types">
+        <div class="wrapper">
+          <img src="./images/TownHouse.jpg" loading="lazy" alt="Townhouse" />
+          <img src="./images/Twinhouse.jpg" loading="lazy" alt="Twinhouse" />
+          <img src="./images/IVILLA-1.jpg" loading="lazy" alt="I-Villa" />
+          <img src="./images/Penthouse.png" loading="lazy" alt="Penthouse" />
+          <div class="list">
+            <p>Twin & Town</p>
+            <p>I-Villa</p>
+            <p>Penthouse & Apartments</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvhp-script">
+        <object data="./pdf/mvhp.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvhp-master">
+        <div class="wrapper">
+          <img src="./images/HPMaster.jpg" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>Life is better with a View</p>
+            <p>An ideal location in New Cairo</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-open" id="mvicitync-location">
+        <div class="wrapper">
+          <img src="./images/ICity-NewCairo-Location.jpg" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>15 Minutes From AUC</p>
+            <p>5 Minutes From The Suez Road</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvicitync-types">
+        <div class="wrapper">
+          <img src="./images/ModernStand.jpg" loading="lazy" alt="Stand Alone" />
+          <img src="./images/ModerTwin.jpg" loading="lazy" alt="Twinhouse" />
+          <img src="./images/IApartment.jpg" loading="lazy" alt="Park Villa" />
+          <img src="./images/SkyLoft.jpg" loading="lazy" alt="IApartment" />
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twin & Town</p>
+            <p>Park Villa</p>
+            <p>I-Villa</p>
+            <p>SkyLoft & I-Apartments</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvicitync-script">
+        <object data="./pdf/mvicitync.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvicitync-master">
+        <div class="wrapper">
+          <img src="./images/ICityPlan.jpg" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>A City Within A City</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-open" id="mvgp-location">
+        <div class="wrapper">
+          <img src="./images/gplocation.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>5 Minutes From Hazem Hassan</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvgp-types">
+        <div class="wrapper">
+          <img src="./images/IVILLA-1.jpg" loading="lazy" alt="I-Villa" />
+          <img src="./images/Penthouse.png" loading="lazy" alt="I-Villa" />
+
+          <div class="list">
+            <p>American Design</p>
+            <p>I-Villa</p>
+            <p>Penthouse</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvgp-script">
+        <object data="./pdf/mvgp.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvgp-master">
+        <div class="wrapper">
+          <img src="./images/GPLMaster.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>A Picture-Perfect Abode</p>
+            <p>Tranquil and Convenient Atop the Giza Plateau</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-open" id="mvop-location">
+        <div class="wrapper">
+          <img src="./images/OctoberParkLocation.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>5 Minutes Drive From Mehwar And Ring Road</p>
+            <p>8 Minutes From Juhayna Square</p>
+            <p>5 Minutes From Giza Plateau</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvop-types">
+        <div class="wrapper">
+          <img src="./images/StandAlone.jpg" loading="lazy" alt="StandAlone" />
+          <img src="./images/Penthouse.png" loading="lazy" alt="Penthouse" />
+          <div class="list">
+            <p>American Design</p>
+            <p>Stand ALone Villa</p>
+            <p>I-Villa</p>
+            <p>Penthouse</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvop-script">
+        <object data="./pdf/mvop.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvop-master">
+        <div class="wrapper">
+          <img src="./images/OctoberParkMaster.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>Make the Most of Every Day</p>
+            <p>Exquisitely Overlooking the Great Pyramids of Giza</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-open" id="mvchop-location">
+        <div class="wrapper">
+          <img src="./images/CHOPLocation.jpg" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>5 Minutes From Juhayna Square</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvchop-types">
+        <div class="wrapper">
+          <img src="./images/C-Villa.jpg" loading="lazy" alt="StandAlone" />
+          <img src="./images/IVILLA-1.jpg" loading="lazy" alt="I-VIlla" />
+          <div class="list">
+            <p>American Design</p>
+            <p>Stand ALone Villa</p>
+            <p>C-Villa</p>
+            <p>I-Villa</p>
+            <p>Townhouse</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvchop-script">
+        <object data="./pdf/mvchop.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvchop-master">
+        <div class="wrapper">
+          <img src="./images/CHOPMaster.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>The Lakeside Villas</p>
+            <p>Strategically located in 6th October City</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-open" id="mvicityo-location">
+        <div class="wrapper">
+          <img src="./images/I-CityOctoberLocation.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>2 Minutes From Shooting Club</p>
+            <p>5 Minutes From Juhayna Square</p>
+            <p>3 Minutes From Mall Of Arabia</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvicityo-types">
+        <div class="wrapper">
+          <img src="./images/ModernStand.jpg" loading="lazy" alt="Stand Alone" />
+          <img src="./images/ModerTwin.jpg" loading="lazy" alt="Twinhouse" />
+          <img src="./images/IApartment.jpg" loading="lazy" alt="Park Villa" />
+          <img src="./images/SkyLoft.jpg" loading="lazy" alt="IApartment" />
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twin & Town</p>
+            <p>Park Villa</p>
+            <p>I-Villa</p>
+            <p>SkyLoft & I-Apartments</p>
+            <p>Sunroof</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvicityo-script">
+        <object data="./pdf/mvicityo.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvicityo-master">
+        <div class="wrapper">
+          <img src="./images/I-CityOctoberMaster.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>An Ideal Environment with you at its Center</p>
+            <p>Central and Convenient</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-open" id="mvasi-location">
+        <div class="wrapper">
+          <img src="./images/ASILocation.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>An Hour From Cairo</p>
+            <p>Easy Accessible From Galala Road</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvasi-types">
+        <div class="wrapper">
+          <img src="./images/ASTwin.jpg" loading="lazy" alt="Twinhouse" />
+          <img src="./images/ASChalets.jpg" loading="lazy" alt="Chalets" />
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twinhouse</p>
+            <p>Chalets</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvasi-script">
+        <object data="./pdf/mvasi.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvasi-master">
+        <div class="wrapper">
+          <img src="./images/ASIMaster.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>Year-Round Sunshine an Hour Away from Cairo</p>
+            <p>Red Sea Shores with a Tropical Twist</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-open" id="mvasii-location">
+        <div class="wrapper">
+          <img src="./images/ASIILocation.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>An Hour From Cairo</p>
+            <p>Easy Accessible From Zaafrana Road</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvasii-types">
+        <div class="wrapper">
+          <img src="./images/ASTwin.jpg" loading="lazy" alt="Twinhouse" />
+          <img src="./images/ASChalets.jpg" loading="lazy" alt="Chalets" />
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twinhouse</p>
+            <p>Chalets</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvasii-script">
+        <object data="./pdf/mvasii.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvasii-master">
+        <div class="wrapper">
+          <img src="./images/ASIIMaster.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>Red Sea Delight, an hour away from Cairo</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-open" id="mvnc-location">
+        <div class="wrapper">
+          <img src="./images/NCLocation.png" loading="lazy" alt="Location" />
+          <div class="list">
+            <p>Easliy Reached From Dab'aa Road</p>
+            <p>Easliy Reached From Cairo-Alexandria Desert Road</p>
+          </div>
+        </div>
+      </div>
+      <div class="types-open" id="mvnc-types">
+        <div class="wrapper">
+          <img src="./images/NCStandalone.jpg" loading="lazy" alt="Stand Alone" />
+          <img src="./images/NCChalets.jpg" loading="lazy" alt="Chalets" />
+          <div class="list">
+            <p>Stand Alone Villa</p>
+            <p>Twinhouse</p>
+            <p>Chalets</p>
+          </div>
+        </div>
+      </div>
+      <div class="script-open" id="mvnc-script">
+        <object data="./pdf/mvnc.pdf" type="application/pdf"></object>
+      </div>
+      <div class="master-open" id="mvnc-master">
+        <div class="wrapper">
+          <img src="./images/NCMaster.png" loading="lazy" alt="Master Plan" />
+          <div class="list">
+            <p>Seafront Beach-Houses</p>
+            <p>Greek Architecture: The Secret to a Great Summer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,961 @@
+* {
+  margin: 0;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+/* Container */
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+
+  overflow: hidden;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 1),
+    rgba(250, 250, 250, 0.1)
+  );
+}
+
+/* Loading Page Animation */
+
+.loading-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loading infinite 2s ease-in;
+}
+
+.loading-page img {
+  width: 60%;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 80%;
+  }
+  20% {
+    opacity: 40%;
+  }
+  40% {
+    opacity: 0%;
+  }
+  60% {
+    opacity: 40%;
+  }
+  80% {
+    opacity: 80%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+/* Nav Bar Styling and Animation */
+
+.nav-bar {
+  width: 20vw;
+  animation: apper forwards 0.5s ease-out;
+  display: none;
+  transform: translateX(-130%);
+  z-index: 2;
+}
+
+.nav-bar li,
+.projects-list li,
+.projects-list li,
+.october-list li,
+.coastal-list li {
+  width: 20vw;
+  height: 50px;
+  border-radius: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  margin: 5px;
+  cursor: pointer;
+  font-size: 9px;
+  transition: 0.3s ease-out;
+}
+
+.projects-list li,
+.october-list li,
+.coastal-list li {
+  margin: 0;
+  margin-top: 5px;
+  justify-content: flex-start;
+  font-size: 9px;
+  transform: translateX(0%);
+}
+
+.projects-list li:hover,
+.projects-list .li-active,
+.october-list li:hover,
+.october-list .li-active,
+.coastal-list li:hover,
+.coastal-list .li-active {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  font-size: 16px;
+  padding-left: 3%;
+  transform: translateX(-40%);
+  padding-left: 5%;
+}
+
+.nav-bar li,
+.nav-bar a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-bar li a {
+  pointer-events: none;
+}
+
+.nav-bar li:hover {
+  transform: translateX(40%);
+  background: rgba(0, 0, 0, 1);
+  padding-right: 10%;
+  color: white;
+  font-size: 16px;
+}
+
+.nav-bar li:hover a {
+  color: white;
+}
+
+.new-cairo,
+.october,
+.coastal,
+.intro,
+.faq,
+.locations,
+.ids {
+  border: none;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  width: 6vw;
+  height: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.nav-bar .li-active {
+  transform: translateX(40%);
+  font-size: 16px;
+  padding-right: 10%;
+  background: rgba(0, 0, 0, 1);
+}
+
+.li-active a {
+  color: white;
+}
+
+.new-cairo-active,
+.october-active,
+.coastal-active,
+.intro-active,
+.faq-active,
+.locations-active,
+.ids-active {
+  border: none;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  transition: 0.3s ease-in;
+  width: 6vw;
+  height: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.new-cairo-active:hover,
+.october-active:hover,
+.coastal-active:hover,
+.intro-active:hover,
+.faq-active:hover,
+.locations-active:hover,
+.ids-active:hover {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.new-cairo-active,
+.intro-active {
+  transform: translateX(6vw);
+}
+.october-active,
+.faq-active {
+  transform: translateX(12vw);
+}
+.coastal-active,
+.locations-active {
+  transform: translateX(18vw);
+}
+
+.ids-active {
+  transform: translateX(24vw);
+}
+
+.page {
+  height: 100vh;
+  width: 50vw;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  animation: apper forwards 1s ease-in;
+}
+
+.about,
+.projects-list,
+.october-list,
+.coastal-list {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.projects-list,
+.october-list,
+.coastal-list {
+  display: none; /*  fake styling  */
+  transform: translateX(100%);
+}
+
+.about img {
+  width: 20%;
+  align-self: center;
+}
+
+@keyframes apper {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.intro-opj,
+.faq-opj,
+.location-opj,
+.agents-opj {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in;
+  z-index: 2;
+}
+
+.mv-intro,
+.mv-faq,
+.mv-location,
+.mv-agents {
+  width: 65%;
+  height: 95%;
+}
+
+.intro-opj .mv-intro object,
+.faq-opj .mv-faq object,
+.location-opj .mv-location object,
+.agents-opj .mv-agents object {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.projects-list li button {
+  position: absolute;
+  width: 5vw;
+}
+
+/* Cards Styling */
+
+.mvi-cards,
+.mvii-cards,
+.mverk-cards,
+.mvhp-cards,
+.mvicitync-cards,
+.mvgp-cards,
+.mvop-cards,
+.mvchop-cards,
+.icityo-cards,
+.mvasi-cards,
+.mvasii-cards,
+.mvnc-cards {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+}
+
+.mvi-cards .mvi-location,
+.mvii-cards .mvii-location,
+.mverk-cards .mverk-location,
+.mvhp-cards .mvhp-location,
+.mvicitync-cards .mvicitync-location,
+.mvgp-cards .mvgp-location,
+.mvop-cards .mvop-location,
+.mvchop-cards .mvchop-location,
+.icityo-cards .icityo-location,
+.mvasi-cards .mvasi-location,
+.mvasii-cards .mvasii-location,
+.mvnc-cards .mvnc-location,
+.mvi-cards .mvi-types,
+.mvii-cards .mvii-types,
+.mverk-cards .mverk-types,
+.mvhp-cards .mvhp-types,
+.mvicitync-cards .mvicitync-types,
+.mvgp-cards .mvgp-types,
+.mvop-cards .mvop-types,
+.mvchop-cards .mvchop-types,
+.icityo-cards .icityo-types,
+.mvasi-cards .mvasi-types,
+.mvasii-cards .mvasii-types,
+.mvnc-cards .mvnc-types,
+.mvi-cards .mvi-script,
+.mvii-cards .mvii-script,
+.mverk-cards .mverk-script,
+.mvhp-cards .mvhp-script,
+.mvicitync-cards .mvicitync-script,
+.mvgp-cards .mvgp-script,
+.mvop-cards .mvop-script,
+.mvchop-cards .mvchop-script,
+.icityo-cards .icityo-script,
+.mvasi-cards .mvasi-script,
+.mvasii-cards .mvasii-script,
+.mvnc-cards .mvnc-script,
+.mvi-cards .mvi-master,
+.mvii-cards .mvii-master,
+.mverk-cards .mverk-master,
+.mvhp-cards .mvhp-master,
+.mvicitync-cards .mvicitync-master,
+.mvgp-cards .mvgp-master,
+.mvop-cards .mvop-master,
+.mvchop-cards .mvchop-master,
+.icityo-cards .icityo-master,
+.mvasi-cards .mvasi-master,
+.mvasii-cards .mvasii-master,
+.mvnc-cards .mvnc-master {
+  width: 18vw;
+  height: 50vh;
+  background: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-left: 10px;
+}
+
+.mvi-cards .mvi-location:hover,
+.mvii-cards .mvii-location:hover,
+.mverk-cards .mverk-location:hover,
+.mvhp-cards .mvhp-location:hover,
+.mvicitync-cards .mvicitync-location:hover,
+.mvgp-cards .mvgp-location:hover,
+.mvop-cards .mvop-location:hover,
+.mvchop-cards .mvchop-location:hover,
+.icityo-cards .icityo-location:hover,
+.mvasi-cards .mvasi-location:hover,
+.mvasii-cards .mvasii-location:hover,
+.mvnc-cards .mvnc-location:hover,
+.mvi-cards .mvi-types:hover,
+.mvii-cards .mvii-types:hover,
+.mverk-cards .mverk-types:hover,
+.mvhp-cards .mvhp-types:hover,
+.mvicitync-cards .mvicitync-types:hover,
+.mvgp-cards .mvgp-types:hover,
+.mvop-cards .mvop-types:hover,
+.mvchop-cards .mvchop-types:hover,
+.icityo-cards .icityo-types:hover,
+.mvasi-cards .mvasi-types:hover,
+.mvasii-cards .mvasii-types:hover,
+.mvnc-cards .mvnc-types:hover,
+.mvi-cards .mvi-script:hover,
+.mvii-cards .mvii-script:hover,
+.mverk-cards .mverk-script:hover,
+.mvhp-cards .mvhp-script:hover,
+.mvicitync-cards .mvicitync-script:hover,
+.mvgp-cards .mvgp-script:hover,
+.mvop-cards .mvop-script:hover,
+.mvchop-cards .mvchop-script:hover,
+.icityo-cards .icityo-script:hover,
+.mvasi-cards .mvasi-script:hover,
+.mvasii-cards .mvasii-script:hover,
+.mvnc-cards .mvnc-script:hover,
+.mvi-cards .mvi-master:hover,
+.mvii-cards .mvii-master:hover,
+.mverk-cards .mverk-master:hover,
+.mvhp-cards .mvhp-master:hover,
+.mvicitync-cards .mvicitync-master:hover,
+.mvgp-cards .mvgp-master:hover,
+.mvop-cards .mvop-master:hover,
+.mvchop-cards .mvchop-master:hover,
+.icityo-cards .icityo-master:hover,
+.mvasi-cards .mvasi-master:hover,
+.mvasii-cards .mvasii-master:hover,
+.mvnc-cards .mvnc-master:hover {
+  background: rgba(0, 0, 0, 1);
+}
+
+.mvi-cards .mvi-types,
+.mvii-cards .mvii-types,
+.mverk-cards .mverk-types,
+.mvhp-cards .mvhp-types,
+.mvicitync-cards .mvicitync-types,
+.mvgp-cards .mvgp-types,
+.mvop-cards .mvop-types,
+.mvchop-cards .mvchop-types,
+.icityo-cards .icityo-types,
+.mvasi-cards .mvasi-types,
+.mvasii-cards .mvasii-types,
+.mvnc-cards .mvnc-types {
+  padding-bottom: 10px;
+}
+
+.mvi-cards .mvi-location img,
+.mvii-cards .mvii-location img,
+.mverk-cards .mverk-location img,
+.mvhp-cards .mvhp-location img,
+.mvicitync-cards .mvicitync-location img,
+.mvgp-cards .mvgp-location img,
+.mvop-cards .mvop-location img,
+.mvchop-cards .mvchop-location img,
+.icityo-cards .icityo-location img,
+.mvasi-cards .mvasi-location img,
+.mvasii-cards .mvasii-location img,
+.mvnc-cards .mvnc-location img,
+.mvi-cards .mvi-types img,
+.mvii-cards .mvii-types img,
+.mverk-cards .mverk-types img,
+.mvhp-cards .mvhp-types img,
+.mvicitync-cards .mvicitync-types img,
+.mvgp-cards .mvgp-types img,
+.mvop-cards .mvop-types img,
+.mvchop-cards .mvchop-types img,
+.icityo-cards .icityo-types img,
+.mvasi-cards .mvasi-types img,
+.mvasii-cards .mvasii-types img,
+.mvnc-cards .mvnc-types img,
+.mvi-cards .mvi-script img,
+.mvii-cards .mvii-script img,
+.mverk-cards .mverk-script img,
+.mvhp-cards .mvhp-script img,
+.mvicitync-cards .mvicitync-script img,
+.mvgp-cards .mvgp-script img,
+.mvop-cards .mvop-script img,
+.mvchop-cards .mvchop-script img,
+.icityo-cards .icityo-script img,
+.mvasi-cards .mvasi-script img,
+.mvasii-cards .mvasii-script img,
+.mvnc-cards .mvnc-script img,
+.mvi-cards .mvi-master img,
+.mvii-cards .mvii-master img,
+.mverk-cards .mverk-master img,
+.mvhp-cards .mvhp-master img,
+.mvicitync-cards .mvicitync-master img,
+.mvgp-cards .mvgp-master img,
+.mvop-cards .mvop-master img,
+.mvchop-cards .mvchop-master img,
+.icityo-cards .icityo-master img,
+.mvasi-cards .mvasi-master img,
+.mvasii-cards .mvasii-master img,
+.mvnc-cards .mvnc-master img {
+  width: 100%;
+  height: 45%;
+  top: 0;
+  object-fit: cover;
+  object-position: 0 20%;
+  transition: 0.3s ease-in-out;
+  filter: brightness(0.8);
+  pointer-events: none;
+}
+
+.mvi-cards .mvi-location:hover img,
+.mvii-cards .mvii-location:hover img,
+.mverk-cards .mverk-location:hover img,
+.mvhp-cards .mvhp-location:hover img,
+.mvicitync-cards .mvicitync-location:hover img,
+.mvgp-cards .mvgp-location:hover img,
+.mvop-cards .mvop-location:hover img,
+.mvchop-cards .mvchop-location:hover img,
+.icityo-cards .icityo-location:hover img,
+.mvasi-cards .mvasi-location:hover img,
+.mvasii-cards .mvasii-location:hover img,
+.mvnc-cards .mvnc-location:hover img,
+.mvi-cards .mvi-types:hover img,
+.mvii-cards .mvii-types:hover img,
+.mverk-cards .mverk-types:hover img,
+.mvhp-cards .mvhp-types:hover img,
+.mvicitync-cards .mvicitync-types:hover img,
+.mvgp-cards .mvgp-types:hover img,
+.mvop-cards .mvop-types:hover img,
+.mvchop-cards .mvchop-types:hover img,
+.icityo-cards .icityo-types:hover img,
+.mvasii-cards .mvasii-types:hover img,
+.mvnc-cards .mvnc-types:hover img,
+.mvasi-cards .mvasi-types:hover img,
+.mvi-cards .mvi-script:hover img,
+.mvii-cards .mvii-script:hover img,
+.mverk-cards .mverk-script:hover img,
+.mvhp-cards .mvhp-script:hover img,
+.mvicitync-cards .mvicitync-script:hover img,
+.mvgp-cards .mvgp-script:hover img,
+.mvop-cards .mvop-script:hover img,
+.mvchop-cards .mvchop-script:hover img,
+.icityo-cards .icityo-script:hover img,
+.mvasi-cards .mvasi-script:hover img,
+.mvasii-cards .mvasii-script:hover img,
+.mvnc-cards .mvnc-script:hover img,
+.mvi-cards .mvi-master:hover img,
+.mvii-cards .mvii-master:hover img,
+.mverk-cards .mverk-master:hover img,
+.mvhp-cards .mvhp-master:hover img,
+.mvicitync-cards .mvicitync-master:hover img,
+.mvgp-cards .mvgp-master:hover img,
+.mvop-cards .mvop-master:hover img,
+.mvchop-cards .mvchop-master:hover img,
+.icityo-cards .icityo-master:hover img,
+.mvasi-cards .mvasi-master:hover img,
+.mvasii-cards .mvasii-master:hover img,
+.mvnc-cards .mvnc-master:hover img {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+.mvi-cards h1,
+.mvii-cards h1,
+.mverk-cards h1,
+.mvhp-cards h1,
+.mvicitync-cards h1,
+.mvgp-cards h1,
+.mvop-cards h1,
+.mvchop-cards h1,
+.icityo-cards h1,
+.mvasi-cards h1,
+.mvasii-cards h1,
+.mvnc-cards h1 {
+  font-size: 24px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.mvi-cards .mvi-location:hover h1,
+.mvii-cards .mvii-location:hover h1,
+.mverk-cards .mverk-location:hover h1,
+.mvhp-cards .mvhp-location:hover h1,
+.mvicitync-cards .mvicitync-location:hover h1,
+.mvgp-cards .mvgp-location:hover h1,
+.mvop-cards .mvop-location:hover h1,
+.mvchop-cards .mvchop-location:hover h1,
+.icityo-cards .icityo-location:hover h1,
+.mvasi-cards .mvasi-location:hover h1,
+.mvasii-cards .mvasii-location:hover h1,
+.mvnc-cards .mvnc-location:hover h1,
+.mvi-cards .mvi-location:hover p,
+.mvii-cards .mvii-location:hover p,
+.mverk-cards .mverk-location:hover p,
+.mvhp-cards .mvhp-location:hover p,
+.mvicitync-cards .mvicitync-location:hover p,
+.mvgp-cards .mvgp-location:hover p,
+.mvop-cards .mvop-location:hover p,
+.mvchop-cards .mvchop-location:hover p,
+.icityo-cards .icityo-location:hover p,
+.mvasi-cards .mvasi-location:hover p,
+.mvasii-cards .mvasii-location:hover p,
+.mvnc-cards .mvnc-location:hover p,
+.mvi-cards .mvi-types:hover h1,
+.mvii-cards .mvii-types:hover h1,
+.mverk-cards .mverk-types:hover h1,
+.mvhp-cards .mvhp-types:hover h1,
+.mvicitync-cards .mvicitync-types:hover h1,
+.mvgp-cards .mvgp-types:hover h1,
+.mvop-cards .mvop-types:hover h1,
+.mvchop-cards .mvchop-types:hover h1,
+.icityo-cards .icityo-types:hover h1,
+.mvasi-cards .mvasi-types:hover h1,
+.mvasii-cards .mvasii-types:hover h1,
+.mvnc-cards .mvnc-types:hover h1,
+.mvi-cards .mvi-types:hover p,
+.mvii-cards .mvii-types:hover p,
+.mverk-cards .mverk-types:hover p,
+.mvhp-cards .mvhp-types:hover p,
+.mvicitync-cards .mvicitync-types:hover p,
+.mvgp-cards .mvgp-types:hover p,
+.mvop-cards .mvop-types:hover p,
+.mvchop-cards .mvchop-types:hover p,
+.icityo-cards .icityo-types:hover p,
+.mvasi-cards .mvasi-types:hover p,
+.mvasii-cards .mvasii-types:hover p,
+.mvnc-cards .mvnc-types:hover p,
+.mvi-cards .mvi-script:hover h1,
+.mvii-cards .mvii-script:hover h1,
+.mverk-cards .mverk-script:hover h1,
+.mvhp-cards .mvhp-script:hover h1,
+.mvicitync-cards .mvicitync-script:hover h1,
+.mvgp-cards .mvgp-script:hover h1,
+.mvop-cards .mvop-script:hover h1,
+.mvchop-cards .mvchop-script:hover h1,
+.icityo-cards .icityo-script:hover h1,
+.mvasi-cards .mvasi-script:hover h1,
+.mvasii-cards .mvasii-script:hover h1,
+.mvnc-cards .mvnc-script:hover h1,
+.mvi-cards .mvi-script:hover p,
+.mvii-cards .mvii-script:hover p,
+.mverk-cards .mverk-script:hover p,
+.mvhp-cards .mvhp-script:hover p,
+.mvicitync-cards .mvicitync-script:hover p,
+.mvgp-cards .mvgp-script:hover p,
+.mvop-cards .mvop-script:hover p,
+.mvchop-cards .mvchop-script:hover p,
+.icityo-cards .icityo-script:hover p,
+.mvasi-cards .mvasi-script:hover p,
+.mvasii-cards .mvasii-script:hover p,
+.mvnc-cards .mvnc-script:hover p,
+.mvi-cards .mvi-master:hover h1,
+.mvii-cards .mvii-master:hover h1,
+.mverk-cards .mverk-master:hover h1,
+.mvhp-cards .mvhp-master:hover h1,
+.mvicitync-cards .mvicitync-master:hover h1,
+.mvgp-cards .mvgp-master:hover h1,
+.mvop-cards .mvop-master:hover h1,
+.mvchop-cards .mvchop-master:hover h1,
+.icityo-cards .icityo-master:hover h1,
+.mvasi-cards .mvasi-master:hover h1,
+.mvasii-cards .mvasii-master:hover h1,
+.mvnc-cards .mvnc-master:hover h1,
+.mvi-cards .mvi-master:hover p,
+.mvii-cards .mvii-master:hover p,
+.mverk-cards .mverk-master:hover p,
+.mvhp-cards .mvhp-master:hover p,
+.mvicitync-cards .mvicitync-master:hover p,
+.mvgp-cards .mvgp-master:hover p,
+.mvop-cards .mvop-master:hover p,
+.mvchop-cards .mvchop-master:hover p,
+.icityo-cards .icityo-master:hover p,
+.mvasi-cards .mvasi-master:hover p,
+.mvasii-cards .mvasii-master:hover p,
+.mvnc-cards .mvnc-master:hover p {
+  color: white;
+}
+
+.mvi-cards p,
+.mvii-cards p,
+.mverk-cards p,
+.mvhp-cards p,
+.mvicitync-cards p,
+.mvgp-cards p,
+.mvop-cards p,
+.mvchop-cards p,
+.icityo-cards p,
+.mvasi-cards p,
+.mvasii-cards p,
+.mvnc-cards p {
+  margin: 10px;
+  transition: 0.3s ease-in-out;
+  pointer-events: none;
+}
+.list {
+  margin: 10px;
+  pointer-events: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.list p {
+  margin: 0;
+  pointer-events: none;
+}
+
+.location-open {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.location-open .wrapper {
+  width: 65%;
+  height: 95%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 50px;
+}
+
+.location-open .wrapper img {
+  width: 100%;
+  height: 85%;
+}
+
+.location-open-active {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.location-open-active .wrapper {
+  width: 65%;
+  height: 95%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 50px;
+  color: white;
+}
+
+.location-open-active .wrapper img {
+  width: 100%;
+  height: 85%;
+}
+
+.types-open {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.types-open .wrapper {
+  width: 65%;
+  height: 95%;
+  overflow: hidden;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  background: rgba(0, 0, 0, 1);
+  border-radius: 50px;
+  color: white;
+}
+
+.types-open .wrapper img {
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  transform: scale(0.95);
+  border-radius: 50px;
+  filter: brightness(0.8);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.types-open-active {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.types-open-active .wrapper {
+  height: 95vh;
+  overflow: hidden;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  background: rgba(0, 0, 0, 1);
+  border-radius: 50px;
+  color: white;
+}
+
+.types-open-active .wrapper img {
+  min-width: 100%;
+  min-height: 85%;
+  object-fit: cover;
+  transform: scale(0.95);
+  border-radius: 50px;
+  filter: brightness(0.8);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border: 2px solid white;
+}
+
+.types-open-active .wrapper img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  z-index: 9999;
+  border: 0;
+}
+
+.script-open {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.script-open object {
+  width: 65%;
+  height: 95%;
+  border-radius: 50px;
+}
+
+.script-open-active {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.3s ease-in-out;
+}
+
+.script-open-active object {
+  width: 65%;
+  height: 95%;
+  border-radius: 50px;
+}
+
+.master-open {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.master-open .wrapper {
+  width: 65%;
+  height: 95%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 50px;
+}
+
+.master-open .wrapper img {
+  width: 100%;
+  height: 85%;
+}
+
+.master-open-active {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.master-open-active .wrapper {
+  width: 65%;
+  height: 95%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 50px;
+  color: white;
+}
+
+.master-open-active .wrapper img {
+  width: 100%;
+  height: 85%;
+}
